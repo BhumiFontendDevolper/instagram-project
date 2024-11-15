@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        body{
+            color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: cornflowerblue;
+        }
+        div#cart{
+background-color:rgb(8, 8, 8);
+height: 480px;
+    width: 300px;
+border-radius: 30px;
+position: relative;
+overflow-y: auto;
+box-shadow: 0 0 1px 5px white;
+& div.storiyan{
+    height: min-content;
+    padding:10px;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding: 10px 5px 10px 5px;
+    & div.story{
+        height:100px;
+        width: 100px;
+        border-radius:50%;
+        padding:4.5px;
+        background: linear-gradient(red,blue,yellow,orange);
+        display: inline-block;
+        margin-right: 5px;
+
+        & img{
+height:100%;
+width: 100%;
+border-radius: 50%;
+object-fit: cover;
+        }
+    }
+    
+    div.my-dp{
+        height:100px;
+        width: 100px;
+        border-radius:50%;
+        background-color: white;
+        display: inline-block;
+        border: 2px solid black;
+position: relative;
+        & img{
+height:100%;
+width: 100%;
+border-radius: 50%;
+object-fit: cover;
+        }
+    }
+    i#story-plus{
+        position: absolute;
+    bottom: 0;
+    right: 10px;
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 100%;
+    font-size: 1rem;
+    padding: 0.2rem;
+}
+    }
+}
+.storiyan::-webkit-scrollbar{
+        display: none;
+    }
+    div.my-profile-friend-list::-webkit-scrollbar{
+        display: none;
+    }
+    div.highlighted-story::-webkit-scrollbar{
+        display: none;
+    }
+    div#cart::-webkit-scrollbar{
+        display: none;
+    }
+    div.my-profile-story-completetion-list::-webkit-scrollbar{
+        display: none;
+    }
+ 
+ h3#insta{
+    margin: 0;
+    padding: 10px;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-family: Monotype Corsiva;
+    font-size: 1.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: black;
+    
+    & div.love-plus-icon{
+        display: inline-block;
+        position: absolute;
+        right:0;
+        margin-right: 5px;
+        & i{
+            font-size: 1.3rem;
+            color:white;
+        }
+        & i:nth-of-type(1){
+            padding: 0.1rem;
+            border-radius: 0.5rem;
+            
+        }
+    }
+}
+
+div.fullscreen{
+    height:100%;
+    width:100%;
+    background-size: cover;
+    background-position:center;
+    position: absolute;
+    display: none;
+}
+div.timeline{
+    height:2px;
+    width:100%;
+    position: absolute;
+    top:20px;
+    animation: timeline 4s forwards;
+    border-bottom: 3px solid white;
+
+}
+@keyframes timeline{
+    0%{
+        width:0;
+    }
+    100%{
+        width:100%;
+    }
+}
+div.fotter{
+    position: sticky;
+    bottom: 0;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color:black;
+    height: 30px;
+    & i{
+        font-size: 1.3rem;
+    }
+}
+div.reel{
+    transform: scaley(1.4);
+    height: 20px;
+    & img.reel-img{
+        mix-blend-mode: difference;
+        filter: contrast(1000) saturate(100000);
+        object-fit: fill;
+        width: 18.2px;
+        transform: scaleY(0.8);
+        height: 20px;
+        border-radius: 5px;
+    }
+  
+}
+h3.user-story-name{
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 500;
+}
+div.my-profile{
+margin: 5px;
+display: none;
+
+}
+div.my-profile-dp-bio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+div.my-profile-dp{
+    border-radius: 100%;
+    position: relative;
+    & img{
+        width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    object-fit: cover;
+    }
+    & i{
+        position: absolute;
+    bottom: 30px;
+    right: 10px;
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 100%;
+    font-size: 1rem;
+    padding: 0.2rem;
+    }
+}
+div.profile-buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    align-items: center;
+    
+    & button{
+        padding: 0.5rem 0.1rem;
+        background-color: rgb(158 158 158 / 26%);
+        width: 40%;
+        border-radius: 5px;
+        border: 0px;
+        color:white;
+        
+    }
+}
+div.story-highlight{
+    text-align: center;
+    margin-top: 10px;
+    & h3{
+margin:0;
+    }
+    & p{
+margin:0;
+    }
+}
+div.highlighted-story{
+white-space: nowrap;
+overflow-x:auto;
+margin-top:5px;
+margin-bottom: 5px;
+& div{
+    display: inline-block;
+}
+ & div.highlight{
+     background-size: cover;
+      display: inline-block; 
+      border:2px solid black;
+      border-radius: 50%;
+      margin-right:2px;
+      height:50px;
+      & img{
+        height:50px;
+        width:50px;
+        object-fit: cover;
+        border-radius:50% ;
+      }
+ }
+}
+div.my-profile-friend-list{
+    text-align: left;
+    white-space: nowrap;
+    overflow-x: scroll;
+    margin-top: 10px;
+}
+div.friend-holder-div{
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 10px;
+
+    & div.friend{
+        width: 100px;
+    height: 100px;
+    margin: 5px;
+    & img{
+        width:100%;
+        height: 100%;
+        border-radius: 100%;
+    }
+    }
+    h3{
+        text-align: center;
+        margin: 0;
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+    p{
+margin: 0;
+    }
+    button{
+background-color: rgb(79, 135, 239);
+color:white;
+font-weight: 600;
+padding:0.5rem;
+border-radius: 5px;
+margin: 2px;
+text-transform: capitalize;
+    }
+}
+div.my-profile-reel-post-header{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+div.profile-post{
+    display: grid;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(3, 1fr);
+    background-color: black;
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+div.my-profile-story-completetion-list{
+    text-align: left;
+    white-space: nowrap;
+    overflow-x: scroll;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+div.my-profile-story-completetion-holder{
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 0.3rem;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+
+    & p{
+        margin: 0;
+        font-size: 12px;
+        margin-bottom: 5px;
+            
+        }
+        & h4{
+            margin: 0;
+            text-transform: capitalize;
+        }
+        & button{
+            color: white;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    text-transform: capitalize;
+        }
+}
+    & div.my-profile-story-completetion-icon{
+        width: 50px;
+    transform: translate(80%);
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+        & i{
+          font-size: 1.5rem;
+    padding: 0.4rem;
+    border-radius: 50%;
+        }
+    }
+
+    div.my-insta-home-page-person-hearder{
+        display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & div.my-insta-home-page-person-nameandimg{
+display: flex;
+    align-items: center;
+    gap: 1rem;
+    & img{
+        width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    padding: 2px;
+    background-image: linear-gradient(red, yellow, blue);
+    }
+    }
+    & div.my-insta-home-page-person-button{
+        & button{
+            text-transform: capitalize;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+        }
+    }
+}
+div.my-insta-home-page-person-post{
+    & img{
+        width: 100%;
+       padding: 5px 0px 5px 0px;
+        height: 300px;
+        object-fit: cover;
+    }
+    }
+
+div.my-insta-home-page-person-fotter{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    & i{
+        font-size:15px;
+    }
+}
+    
+    div.loder{
+        width: 30px;
+    height: 30px;
+    border-top: 3px dotted white;
+    border-radius: 100%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+    
+    @keyframes spin{
+        0%{
+            rotate: 0deg;
+        }
+        100%{
+            rotate: 360deg;
+        }
+    }
+    
+
+
+
+     </style>
+</head>
+<body>
+
+    <div id="cart">
+       
+        <h3 id="insta">instagram
+            <div class="love-plus-icon">
+                <i class="fa-brands fa-facebook-messenger"  id="messege"></i>
+                <i class="fa-solid fa-heart" id="love"></i>
+            </div>
+        </h3>
+        
+       <div class="fullscreen">
+        <div class="timeline">
+
+        </div>
+       </div>
+      <div class="storiyan">
+      </div>
+
+      <div class="my-profile">
+        <header style="display: flex; justify-content: space-between;align-items: center; margin-bottom: 10px;">
+         <p style="margin: 0;font-weight: 600;line-height: 2;"><i class="fa-solid fa-arrow-left" id="arrow-left"></i> Bhumika sethi <i class="fa-solid fa-angle-down"></i></p>
+          <div class="my-profile-header">
+            <i class="fa-brands fa-threads"></i>
+        <i class="fa-regular fa-plus"></i>
+        <i class="fa-solid fa-bars"></i>
+
+          </div>
+        </header>
+
+        <div class="my-profile-dp-bio">
+            <div class="my-profile-dp">
+                <img src="1000076604 (3).jpg">
+                <i class="fa-regular fa-plus" id="story-plus"></i>
+                <h3 style= "margin:0; font-size: 1rem;">Bhumika sethi</i></h3>
+            </div>
+            <div>6<br>post</div>
+            <div>13k <br>follower</div>
+           <div>5k <br>following</div>
+        </div>
+
+        <div class="profile-buttons">
+            <button>Edit profile</button>
+            <button>share profile</button>
+            <i class="fa-solid fa-user-plus" id="user-plus"style="border: 2px solid black;
+            padding: 0.2rem;
+            border-radius: 5px;"></i>
+        </div>
+
+
+        <div style="display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        text-transform: capitalize;" class="my-profile-friend-list-header">
+            <h4  style="margin: 0;">discover people</h5>
+            <h4 style="margin: 0; color:cornflowerblue;">see all</h5>
+        </div>
+
+       <div class="my-profile-friend-list" >
+        <div class="friend-holder-div">
+         <div class="friend">
+            <img src="https://images.unsplash.com/photo-1596906052385-580af5d77e97?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDg2fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+        </div>
+        <h3>rose</h3>
+         <p>sujjested for you</p>
+         <button id="follow-button">follow</button>
+         
+         </div>
+         <div class="friend-holder-div">
+            <div class="friend">
+               <img src="https://images.unsplash.com/photo-1719124627446-22102efda889?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D" alt="">
+           </div>
+           <h3>merry</h3>
+            <p>sujjested for you</p>
+            <button id="follow-button">follow</button>
+            
+            </div>
+            <div class="friend-holder-div">
+                <div class="friend">
+                   <img src="https://images.unsplash.com/photo-1569210954449-4e8dc4e022a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+               </div>
+               <h3>jakky</h3>
+                <p>sujjested for you</p>
+                <button  id="follow-button">follow</button>
+                
+                </div>
+                <div class="friend-holder-div">
+                    <div class="friend">
+                       <img src="https://images.unsplash.com/photo-1588343509724-a1d657a78a70?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYxfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+                   </div>
+                   <h3>kamelia</h3>
+                    <p>sujjested for you</p>
+                    <button  id="follow-button">follow</button>
+                    
+                    </div>
+                    <div class="friend-holder-div">
+                        <div class="friend">
+                           <img src="https://plus.unsplash.com/premium_photo-1675130119373-61ada6685d63?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDc5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+                       </div>
+                       <h3>harry</h3>
+                        <p>sujjested for you</p>
+                        <button  id="follow-button">follow</button>
+                        
+                        </div>
+                        <div class="friend-holder-div">
+                            <div class="friend">
+                               <img src="https://images.unsplash.com/photo-1717167170798-b0d20b62d0ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDk4fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+                           </div>
+                           <h3>mingin</h3>
+                            <p>sujjested for you</p>
+                            <button  id="follow-button">follow</button>
+                            
+                            </div>
+                            <div class="friend-holder-div">
+                                <div class="friend">
+                                   <img src="https://images.unsplash.com/photo-1567784177951-6fa58317e16b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyNnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8" alt="">
+                               </div>
+                               <h3>sam</h3>
+                                <p>sujjested for you</p>
+                                <button  id="follow-button">follow</button>
+                                
+                                </div>
+       </div>
+
+        <div class="story-highlight">
+            <h3>
+                story highlight
+            </h3>
+            <p>keep your favourite stories in your profiles</p>
+            <div class="highlighted-story">
+                <div>
+                    <div class="highlight">
+                        <img src="1000076604 (3).jpg" alt="">
+                    </div>
+                    <h6 style="margin: 0;">Highlight</h6>
+                </div>
+                <div>
+                    <div class="highlight">
+                      <img src="https://images.unsplash.com/photo-1651010966858-8c2c7633f003?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU3fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+                    </div>
+                    <h6 style="margin: 0;">my day ❤️</h6>
+                </div>
+                <div>
+                    <div class="highlight">
+<img src="https://plus.unsplash.com/premium_photo-1661542769837-b6d2af7ed7d9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUwfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+                    </div>
+                    <h6 style="margin: 0;">friend 😉</h6>
+                </div>
+                <div>
+                    <div class="highlight">
+<img src="https://images.unsplash.com/photo-1505032294233-0f68b944cc5b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDYzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+                    </div>
+                    <h6 style="margin: 0;">loves</h6>
+         </div>
+                <div>
+                    <div class="highlight">
+<img src="https://images.unsplash.com/photo-1715433675839-350ddf04c4aa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExMHx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8" alt="">
+                    </div>
+                    <h6 style="margin: 0;">summer🥵</h6>
+                </div>
+                <div>
+                    <div class="highlight">
+<img src="https://plus.unsplash.com/premium_photo-1678666719333-6b289f316010?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxJTzg1ckRRSUd6SXx8ZW58MHx8fHx8" alt="">
+                    </div>
+                    <h6 style="margin: 0;">college day</h6>
+                </div>
+                <div>
+                    <div class="highlight">
+                        <img src="instaplusimg.png" alt="">
+                    </div>
+                    <h6 style="margin: 0;">New</h6>
+                </div>
+                
+            </div>
+        </div>
+ <div>
+    <div class="my-profile-reel-post-header">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.8qIp9c2VQWMi-maj93w1lAHaHa&pid=Api&P=0&h=180" alt="" width="20px" height="20px">
+        <img src="reel.jpg" alt="" width="20px" height="20px">
+        <i class="fa-solid fa-user-lock"></i>
+    </div>
+    <div class="profile-post">
+<img src="https://images.unsplash.com/photo-1719257726822-9899127bb072?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D" alt="">
+<img src="https://plus.unsplash.com/premium_photo-1687880811763-9de5c1de181b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDV8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D" alt="">
+<img src="https://images.unsplash.com/photo-1719159117945-095836cdfb23?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE0fHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D" alt="">
+<img src="https://images.unsplash.com/photo-1719124627442-354c426e62a5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D" alt="">
+<img src="https://images.unsplash.com/photo-1718554517663-83ffd1ce66f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUyfEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D" alt="">
+<img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHhqUFI0aGxrQkdBfHxlbnwwfHx8fHw%3D" alt="">
+    </div>
+ </div>
+
+ <!-- --------------------------- story complited------------------------------- -->
+ <div class="profile-completetion">
+    <h3 style="margin:0;font-size: small;margin-left: 5px;">complete of your profile
+        <span style="display: block;
+        font-size: 0.8rem;
+        color: #0a940af7;
+        filter: contrast(1.9);">2 of 4 <span>complete</span></span>
+    </h3>
+    <div class="my-profile-story-completetion-list">
+        <div class="my-profile-story-completetion-holder">
+            <div class="my-profile-story-completetion-icon">
+                <i class="fa-solid fa-comment"></i>
+            </div>
+            <h4>add bio</h4>
+            <p>Tell your followers a <br>little bit about yourself</p>
+            <button>Add bio</button>
+            
+        </div>
+        <div class="my-profile-story-completetion-holder">
+            <div class="my-profile-story-completetion-icon">
+                 <i class="fa-solid fa-user-friends"></i>
+            </div>
+            <h4>find people to follow</h4>
+            <p>Follow people and <br>interest you care about</p>
+            <button>find people</button>
+        </div>
+        <div class="my-profile-story-completetion-holder">
+            <div class="my-profile-story-completetion-icon">
+                  <i class="fa-solid fa-user-check" style="color: #16ec16;"></i> 
+            </div> 
+            <h4>add your name</h4>
+            <p>add your full name so<br> your friends knowit's you</p>
+            <button style="color: #040404;background-color: aliceblue;">edit name</button>              
+        </div>
+        <div class="my-profile-story-completetion-holder">
+            <div class="my-profile-story-completetion-icon">
+                  <i class="fa-solid fa-user-check" style="color: #16ec16;"></i>
+            </div>
+            <h4>add profile photo</h4>
+            <p>choose your profile picture <br> to establish you in instagram</p>
+            <button style="color: black;background-color: white;">change photo</button>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="my-insta-home-page">
+
+    <div class="my-insta-home-page-person-each-holder">
+    <div class="my-insta-home-page-person-hearder">
+      <div class="my-insta-home-page-person-nameandimg">
+        <img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHhqUFI0aGxrQkdBfHxlbnwwfHx8fHw%3D" alt="">
+        janvi sharma.235
+      </div>
+
+      <div class="my-insta-home-page-person-button">
+        <button>follow</button>
+      </div>
+      <div class="my-insta-home-page-person-icons">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>
+    </div>
+
+     <div class="my-insta-home-page-person-post">
+        <img src="https://plus.unsplash.com/premium_photo-1681484125475-7c5d3fe342f6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+     </div>
+
+     <div class="my-insta-home-page-person-fotter">
+        <div>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-comment"></i>
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+      <div>
+        <i class="fa-regular fa-bookmark"></i>
+      </div>
+     </div>
+
+     </div>
+
+     
+    <div class="my-insta-home-page-person-each-holder">
+        <div class="my-insta-home-page-person-hearder">
+          <div class="my-insta-home-page-person-nameandimg">
+            <img src="https://images.unsplash.com/photo-1719066373323-c3712474b2a4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D" alt="">
+            bikki seth
+          </div>
+    
+          <div class="my-insta-home-page-person-button">
+            <button>follow</button>
+          </div>
+          <div class="my-insta-home-page-person-icons">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+    
+         <div class="my-insta-home-page-person-post">
+            <img src="https://images.unsplash.com/photo-1584043720379-b56cd9199c94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1lbnxlbnwwfHwwfHx8MA%3D%3D" alt="">
+         </div>
+    
+         <div class="my-insta-home-page-person-fotter">
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          <div>
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
+         </div>
+    
+         </div>
+
+         
+    <div class="my-insta-home-page-person-each-holder">
+        <div class="my-insta-home-page-person-hearder">
+          <div class="my-insta-home-page-person-nameandimg">
+            <img src="https://images.unsplash.com/photo-1556194717-29bded1332dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIwfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+           lovely.devil
+          </div>
+    
+          <div class="my-insta-home-page-person-button">
+            <button>follow</button>
+          </div>
+          <div class="my-insta-home-page-person-icons">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+    
+         <div class="my-insta-home-page-person-post">
+            <img src="https://images.unsplash.com/photo-1598421815090-8806b6cffeaf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+         </div>
+    
+         <div class="my-insta-home-page-person-fotter">
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          <div>
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
+         </div>
+    
+         </div>
+
+         
+    <div class="my-insta-home-page-person-each-holder">
+        <div class="my-insta-home-page-person-hearder">
+          <div class="my-insta-home-page-person-nameandimg">
+            <img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHhqUFI0aGxrQkdBfHxlbnwwfHx8fHw%3D" alt="">
+            smith.harvert
+          </div>
+    
+          <div class="my-insta-home-page-person-button">
+            <button>follow</button>
+          </div>
+          <div class="my-insta-home-page-person-icons">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+    
+         <div class="my-insta-home-page-person-post">
+            <img src="https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1lbnxlbnwwfHwwfHx8MA%3D%3D" alt="">
+         </div>
+    
+         <div class="my-insta-home-page-person-fotter">
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          <div>
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
+         </div>
+    
+         </div>
+
+         
+    <div class="my-insta-home-page-person-each-holder">
+        <div class="my-insta-home-page-person-hearder">
+          <div class="my-insta-home-page-person-nameandimg">
+            <img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHhqUFI0aGxrQkdBfHxlbnwwfHx8fHw%3D" alt="">
+            rosii.world
+          </div>
+    
+          <div class="my-insta-home-page-person-button">
+            <button>follow</button>
+          </div>
+          <div class="my-insta-home-page-person-icons">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+    
+         <div class="my-insta-home-page-person-post">
+            <img src="https://images.unsplash.com/photo-1604004215656-5ea118076982?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIyfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+         </div>
+    
+         <div class="my-insta-home-page-person-fotter">
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          <div>
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
+         </div>
+    
+         </div>
+
+         
+    <div class="my-insta-home-page-person-each-holder">
+        <div class="my-insta-home-page-person-hearder">
+          <div class="my-insta-home-page-person-nameandimg">
+            <img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHhqUFI0aGxrQkdBfHxlbnwwfHx8fHw%3D" alt="">
+            jhone smith.98
+          </div>
+    
+          <div class="my-insta-home-page-person-button">
+            <button>follow</button>
+          </div>
+          <div class="my-insta-home-page-person-icons">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+    
+         <div class="my-insta-home-page-person-post">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzN3x0b3dKWkZza3BHZ3x8ZW58MHx8fHx8" alt="">
+         </div>
+    
+         <div class="my-insta-home-page-person-fotter">
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          <div>
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
+         </div>
+    
+         </div>
+
+         
+    <div class="my-insta-home-page-person-each-holder">
+        <div class="my-insta-home-page-person-hearder">
+          <div class="my-insta-home-page-person-nameandimg">
+            <img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHhqUFI0aGxrQkdBfHxlbnwwfHx8fHw%3D" alt="">
+            dua lipa.23
+          </div>
+    
+          <div class="my-insta-home-page-person-button">
+            <button>follow</button>
+          </div>
+          <div class="my-insta-home-page-person-icons">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+    
+         <div class="my-insta-home-page-person-post">
+            <img src="https://images.unsplash.com/photo-1613031185736-12f2921f31d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="">
+         </div>
+    
+         <div class="my-insta-home-page-person-fotter">
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          <div>
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
+         </div>
+    
+         </div>
+
+     
+
+</div>
+
+      <div class="loder">
+
+      </div>
+
+     <div class="fotter">
+        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-regular fa-plus"></i>
+        <div class="reel">
+            <img src="reel.jpg" class="reel-img">
+        </div>
+        
+        <i class="fa-solid fa-user" id="user-icon"></i>
+      
+     </div>
+     
+
+
+
+    </div>
+</body>
+
+
+
+<script>
+
+let love=document.querySelector("#love");
+let check=0;
+love.addEventListener("click",()=>{
+if(check==0){
+    love.style.color="red"
+    check=1
+}
+else{
+    love.style.color="white"
+    check=0
+}
+})
+let story=document.querySelectorAll(".story");
+
+
+let icon= document.querySelectorAll("i");
+
+let stories=[
+    {
+dp:"1000076604 (3).jpg"
+    },
+{
+dp:"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ3fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+Name:"dua lipa",
+},
+{
+dp:"https://images.unsplash.com/photo-1596906052385-580af5d77e97?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDg2fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+Name:"rose",
+
+},
+{
+dp:"https://images.unsplash.com/photo-1652519728126-18439b8560da?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyMnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8",
+Name:"harry",
+
+},
+{
+dp:"https://images.unsplash.com/photo-1658348181593-23412aa23900?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE3fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+Name:"john",
+
+},
+{
+dp:"https://images.unsplash.com/photo-1511590895197-7b1da5737705?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM2fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+Name:"rosii",
+
+},
+{
+dp:"https://images.unsplash.com/photo-1718730570868-520d27735256?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+Name:"shahil",
+},
+{
+dp:"https://images.unsplash.com/photo-1687825490158-434238b8b59f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+Name:"priyanka",
+},
+{
+dp:"https://images.unsplash.com/photo-1716566997273-d39f893c78bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzM3x0b3dKWkZza3BHZ3x8ZW58MHx8fHx8",
+Name:"rosnai",
+},
+{
+dp:"https://plus.unsplash.com/premium_photo-1673884221460-491ee6876581?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExMnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8",
+Name:"smith",
+
+},
+{
+dp:"https://images.unsplash.com/photo-1682917265575-d88531cf0ca7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwM3x0b3dKWkZza3BHZ3x8ZW58MHx8fHx8" ,
+Name:"kathe",
+   
+},
+{
+dp:"https://plus.unsplash.com/premium_photo-1661515545224-4a4531e90444?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDkxfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+Name:"hirani",
+
+}
+]
+let instaheader=document.querySelector("#insta");
+let storiyan=document.querySelector(".storiyan");
+let mydp=document.querySelector(".my-dp");
+let fullscreen=document.querySelector(".fullscreen");
+let lodar=document.querySelector(".loder");
+let data="";
+let fotter=document.querySelector(".fotter");
+stories.forEach((elm,idx)=>{
+    data+=`<div class="story">
+        <img src="${elm.dp}" id="${idx}">
+        <h3 class="user-story-name">${elm.Name}</h3>
+        </div>`
+});
+storiyan.innerHTML=data;
+document.querySelectorAll(".story")[0].innerHTML=`<div class="my-dp">
+            <img src="1000076604 (3).jpg" alt="">
+            <i class="fa-regular fa-plus" id="story-plus"></i>
+            <h3 class="user-story-name">your story</h3>
+        </div>`
+        document.querySelectorAll(".story")[0].style.background=0;
+        let storitimer=0;
+
+        storiyan.addEventListener("click",(e)=>{
+            
+                let eachstory=stories[e.target.id].dp;
+fullscreen.style.display="block"
+fullscreen.style.backgroundImage=`url(${eachstory})`;
+document.querySelectorAll(".story")[0].style.display="none";
+instaheader.style.display="none";
+fotter.style.display="none";
+lodar.style.display="none"
+setTimeout(()=>{
+    fullscreen.style.display="none";
+    document.querySelectorAll(".story")[0].style.display="inline-block";
+    instaheader.style.display="flex";
+    fotter.style.display="flex";
+    lodar.style.display="block"
+},4000)
+})
+let follow=document.querySelectorAll("#follow-button");
+let followunfollowchecker=true;
+follow.forEach((btn)=>{
+btn.addEventListener(("click"),(e)=>{
+   if(followunfollowchecker==true){
+    e.target.innerHTML="unfollow";
+    e.target.style.backgroundColor="white"
+    e.target.style.color="black";
+    followunfollowchecker=false
+   }
+   else{
+    e.target.innerHTML="follow";
+    e.target.style.backgroundColor="rgb(79, 135, 239)"
+    e.target.style.color="white";
+    followunfollowchecker=true
+   }
+})
+});
+
+
+
+let myprofile=document.querySelectorAll(".my-profile")
+let usertag=document.querySelector("#user-icon")
+let arrowleft=document.querySelector("#arrow-left")
+let Fotter=document.querySelectorAll(".fotter")
+let home=document.querySelector(".my-insta-home-page");
+usertag.addEventListener("click",()=>{
+    storiyan.style.display="none";
+    myprofile[0].style.display="block";
+    Fotter[0].style.position="sticky";
+    home.style.display="none"
+})
+arrowleft.addEventListener("click",()=>{
+storiyan.style.display="block";
+myprofile[0].style.display="none";
+home.style.display="block"
+})
+let userplus=document.querySelector("#user-plus")
+let myprofilefriendlist=document.querySelector(".my-profile-friend-list")
+let myprofilefriendlistheader=document.querySelector(".my-profile-friend-list-header");
+myprofilefriendlistheader.style.display="none"
+let profilefriendcheeker=true;
+myprofilefriendlist.style.display="none"
+userplus.addEventListener("click",()=>{
+    if(profilefriendcheeker==true){
+        myprofilefriendlist.style.display="block";
+        myprofilefriendlistheader.style.display="flex"
+        userplus.style.color="black";
+        userplus.style.backgroundColor="white"
+        profilefriendcheeker=false
+    }
+    else{
+        myprofilefriendlist.style.display="none"
+        myprofilefriendlistheader.style.display="none"
+        userplus.style.color="white";
+        userplus.style.backgroundColor="black"
+        profilefriendcheeker=true
+    }
+})
+
+
+
+</script>
+<script src="string.js"></script>
+</html>
